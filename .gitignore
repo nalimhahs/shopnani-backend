@@ -1,0 +1,4 @@
+env.sh
+*.pyc
+db.sqlite3
+settings.json
