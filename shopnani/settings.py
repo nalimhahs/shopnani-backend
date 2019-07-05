@@ -25,11 +25,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['api-shopnani.herokuapp.com', 'shopnani.netlify.com', 'localhost:3000']
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://shopnani.netlify.com'
+    'https://api-shopnani.herokuapp.com'
 )
 
 # Application definition
