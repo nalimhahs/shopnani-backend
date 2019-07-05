@@ -1,2 +1,2 @@
-web: gunicorn cfehome.wsgi --log-file -
+web: gunicorn shopnani.wsgi
 
