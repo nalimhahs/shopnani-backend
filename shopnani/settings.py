@@ -29,8 +29,9 @@ ALLOWED_HOSTS = ['api-shopnani.herokuapp.com', 'shopnani.netlify.com', 'localhos
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
-    'http://shopnani.netlify.com'
-    'https://api-shopnani.herokuapp.com'
+    'http://shopnani.netlify.com',
+    'https://shopnani.netlify.com',
+    'https://api-shopnani.herokuapp.com',
 )
 
 # Application definition
