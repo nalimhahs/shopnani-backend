@@ -5,18 +5,20 @@ from rest_framework.response import Response
 
 from . import services
 
+# Accepts the query through the get request and passes it to the get results 
+# service and returns the data as the response
+
 
 class GetResultView(APIView):
 
-    def get(self,request):
+    def get(self, request):
         results = services.getResultsService(request.query_params.get('query'))
         return Response(results)
 
 
 def error_404_view(request, exception):
-    # data = {"name": "ThePythonDjango.com"}
-    return render(request,'404.html')
+    return render(request, '404.html')
+
 
 def error_500_view(request):
-    # data = {"name": "ThePythonDjango.com"}
-    return render(request,'500.html')
+    return render(request, '500.html')

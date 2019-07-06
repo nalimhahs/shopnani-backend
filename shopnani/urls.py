@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+# List of applicable urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('search.urls'))
 ]
 
+# Handlers for 404/500 errors to show the custom template rather than the default ones
 handler404 = 'search.views.error_404_view'
 handler500 = 'search.views.error_500_view'

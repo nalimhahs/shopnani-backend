@@ -20,13 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Kepping the security key as an environment variable
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+# List of hosts allowed to access this site
 ALLOWED_HOSTS = ['api-shopnani.herokuapp.com', 'shopnani.netlify.com', 'localhost',]
 
+# Whitelist for CORS
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
     'http://shopnani.netlify.com',
@@ -60,22 +63,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'shopnani.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
 
 WSGI_APPLICATION = 'shopnani.wsgi.application'
 
@@ -143,11 +130,7 @@ if DEBUG != 'True':
         )
     })
 
-
-# TEMPLATE_DIRS = (
-#     BASE_DIR + '/templates/',
-#     # os.path.join(BASE_DIR, 'templates/'),
-# )
+# Configuration of the template folder for the custom 404/500 templates
 
 TEMPLATES = [
     {
