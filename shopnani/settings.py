@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['api-shopnani.herokuapp.com', 'shopnani.netlify.com', 'localhost:3000']
+ALLOWED_HOSTS = ['api-shopnani.herokuapp.com', 'shopnani.netlify.com', 'localhost',]
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
@@ -142,3 +142,25 @@ if DEBUG != 'True':
             'rest_framework.renderers.JSONRenderer',
         )
     })
+
+
+# TEMPLATE_DIRS = (
+#     BASE_DIR + '/templates/',
+#     # os.path.join(BASE_DIR, 'templates/'),
+# )
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
